@@ -28,12 +28,12 @@
 
 Summary:	'Bad' plugins for the Moovida media center
 Name:		moovida-plugins-bad
-Version:	1.0.6
+Version:	1.0.7
 Release:	%{release}
 Source0:	http://www.moovida.com/media/public/%{distname}
 # Disable irrelevant plugin (now we can't do it in core...) - AdamW
 # 2008/10
-Patch0:		elisa-plugins-bad-0.5.22-unneeded.patch
+Patch0:		elisa-plugins-bad-1.0.7-unneeded.patch
 # From Debian: use system Coherence - AdamW 2009/02
 Patch1:		http://patch-tracking.debian.net/patch/series/dl/elisa-plugins-bad/0.5.28-1/40_use-system-coherence.patch
 License:	GPLv3 and MIT
