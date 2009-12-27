@@ -28,7 +28,7 @@
 
 Summary:	'Bad' plugins for the Moovida media center
 Name:		moovida-plugins-bad
-Version:	1.0.8
+Version:	1.0.9
 Release:	%{release}
 Source0:	http://www.moovida.com/media/public/%{distname}
 # Disable irrelevant plugin (now we can't do it in core...) - AdamW
