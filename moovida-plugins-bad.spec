@@ -58,6 +58,8 @@ Suggests:	python-daap
 Suggests:	avahi-python
 # Needed for yes.fm support
 Suggests:	python-simplejson
+# Needed for iPod support
+Suggests:	python-gpod
 Provides:	elisa-plugins-bad = %{version}-%{release}
 Obsoletes:	elisa-plugins-bad < %{version}-%{release}
 
