@@ -1,0 +1,10 @@
+--- elisa-plugins-bad-1.0.7/setup.py.orig	2009-09-15 14:22:56.000000000 +0200
++++ elisa-plugins-bad-1.0.7/setup.py	2009-09-15 23:23:38.000000000 +0200
+@@ -16,7 +16,6 @@
+                'http_client',
+                'ipod',
+                'lastfm',
+-               'osso',
+                'pigment',
+                'poblesec',
+                'rss',
