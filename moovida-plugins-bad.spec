@@ -2,26 +2,6 @@
 
 %define oname	elisa-plugins-bad
 
-%define rel	1
-
-%define svn	0
-%define pre	0
-%if %svn
-%define release		%mkrel 0.%svn.%rel
-%define distname	%name-%svn.tar.lzma
-%define dirname		%oname
-%else
-%if %pre
-%define release		%mkrel 0.%pre.%rel
-%define distname	%name-%version.%pre.tar.gz
-%define dirname		%oname-%version.%pre
-%else
-%define release		%mkrel %rel
-%define distname	%name-%version.tar.gz
-%define dirname		%oname-%version
-%endif
-%endif
-
 # It's the same for releases, but different for pre-releases: please
 # don't remove, even if it seems superfluous - AdamW 2008/03
 %define fversion	%{version}
@@ -29,8 +9,8 @@
 Summary:	'Bad' plugins for the Moovida media center
 Name:		moovida-plugins-bad
 Version:	1.0.9
-Release:	%{release}
-Source0:	http://www.moovida.com/media/public/%{distname}
+Release:	2
+Source0:	http://www.moovida.com/media/public/%{name}-%{version}.tar.gz
 # Disable irrelevant plugin (now we can't do it in core...) - AdamW
 # 2008/10
 Patch0:		elisa-plugins-bad-1.0.7-unneeded.patch
@@ -40,7 +20,6 @@ License:	GPLv3 and MIT
 Group:		Development/Python
 URL:		http://www.moovida.com/
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	python
 BuildRequires:	python-setuptools
 BuildRequires:	python-devel
@@ -60,8 +39,7 @@ Suggests:	avahi-python
 Suggests:	python-simplejson
 # Needed for iPod support
 Suggests:	python-gpod
-Provides:	elisa-plugins-bad = %{version}-%{release}
-Obsoletes:	elisa-plugins-bad < %{version}-%{release}
+%rename	elisa-plugins-bad
 
 %description
 Moovida is a project to create an open source cross platform media center 
@@ -69,23 +47,20 @@ solution. This package contains 'bad' (somehow not up to planned
 standards for plugins) plugins for Moovida.
 
 %prep
-%setup -q -n %{dirname}
+%setup -q -n %{oname}-%{version}
 %patch0 -p1 -b .unneeded
 %patch1 -p1 -b .sys_coherence
 
 %build
 
 %install
-rm -rf %{buildroot}
 python setup.py install --root=%{buildroot} --single-version-externally-managed --compile --optimize=2
 # already in -good
 rm -f %{buildroot}%{py_puresitedir}/elisa/plugins/__init__*
 
-%clean
-rm -rf %{buildroot}
-
 %files
 %defattr(-,root,root)
 %{py_puresitedir}/elisa/plugins/*
-%{py_puresitedir}/elisa_plugin_*-py%{pyver}.egg-info
-%{py_puresitedir}/elisa_plugin_*-py%{pyver}-nspkg.pth
+%{py_puresitedir}/elisa_plugin_*-py%{py_ver}.egg-info
+%{py_puresitedir}/elisa_plugin_*-py%{py_ver}-nspkg.pth
+

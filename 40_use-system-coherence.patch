@@ -1,0 +1,13 @@
+diff -ur elisa-plugins-bad-1.0.6.orig/elisa/plugins/discogs/discogs_resource.py elisa-plugins-bad-1.0.6/elisa/plugins/discogs/discogs_resource.py
+--- elisa-plugins-bad-1.0.6.orig/elisa/plugins/discogs/discogs_resource.py	2009-08-03 16:47:07.000000000 +0200
++++ elisa-plugins-bad-1.0.6/elisa/plugins/discogs/discogs_resource.py	2009-08-17 23:07:55.000000000 +0200
+@@ -36,7 +36,7 @@
+ from elisa.plugins.base.models.image import ImageModel
+ from elisa.plugins.base.models.media import RawDataModel
+ 
+-from elisa.extern.coherence.et import parse_xml
++from coherence.extern.et import parse_xml
+ 
+ from twisted.web2 import responsecode
+ from twisted.web2.stream import BufferedStream
+Only in elisa-plugins-bad-1.0.6/elisa/plugins/discogs: discogs_resource.py~
