@@ -18,7 +18,7 @@ Patch0:		elisa-plugins-bad-1.0.7-unneeded.patch
 Patch1:		http://patch-tracking.debian.net/patch/series/dl/elisa-plugins-bad/0.5.28-1/40_use-system-coherence.patch
 License:	GPLv3 and MIT
 Group:		Development/Python
-URL:		http://www.moovida.com/
+URL:		https://www.moovida.com/
 BuildArch:	noarch
 BuildRequires:	python
 BuildRequires:	python-setuptools
